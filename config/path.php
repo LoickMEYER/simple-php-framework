@@ -23,7 +23,7 @@ define('APP_DIR', 'src');
  *
  * `define('WWW_ROOT', rtrim($_SERVER['DOCUMENT_ROOT'], DS) . DS);`
  */
-define('WWW_ROOT', ROOT . DS . 'webroot' . DS);
+define('WWW_ROOT',  'webroot' . DS);
 
 /**
  * The Full Pass to the View Directory
