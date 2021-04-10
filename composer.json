@@ -1,0 +1,14 @@
+{
+    "name": "utilisateur/simple-php-framework",
+    "description": "Simple PHP MVC Framework",
+    "authors": [{
+        "name": "Loick MEYER",
+        "email": "hello@loickmeyer.fr"
+    }],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src"
+        }
+    },
+    "require": {}
+}
