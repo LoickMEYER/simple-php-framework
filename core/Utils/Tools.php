@@ -4,7 +4,7 @@ namespace Core\Utils;
 
 class Tools
 {
-    public function dashesToCamelCase($string, $capitalizeFirstCharacter = false)
+    public static function dashesToCamelCase($string, $capitalizeFirstCharacter = false)
     {
 
         $str = str_replace('-', '', ucwords($string, '-'));

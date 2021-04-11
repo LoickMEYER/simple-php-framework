@@ -16,6 +16,11 @@ define('ROOT', dirname(__DIR__));
 define('APP_DIR', 'src');
 
 
+/**
+ * The Full Pass to the config Directory
+ */
+define('CONFIG_DIR', ROOT . DS . 'config');
+
 /*
  * File path to the webroot directory.
  *
@@ -62,5 +67,5 @@ define('FILES_DIR', WWW_ROOT . 'files' . DS);
 
 
 /**
- * Add personal path bellow
+ * Add personal path below
  */

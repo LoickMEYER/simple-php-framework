@@ -5,14 +5,12 @@ namespace Core\Router;
 class Router
 {
 
-    /**
-     * Documentation : 
-     * @TODO
-     */
-    private $routes = [
-        '/' => ['controller' => 'Pages', 'action' => 'home'],
-        '/article/:id' => ['controller' => 'Pages', 'action' => 'home'],
-    ];
+    private $routes;
+
+    public function __construct()
+    {
+        $this->routes = include(CONFIG_DIR . DS . 'routes.php');
+    }
 
     public function getRoutes()
     {
@@ -29,9 +27,14 @@ class Router
 
             $clean_url = trim($url, '/');
             $clean_url_route = trim($url_route, '/');
+
+            /**
+             * The route match perfectly
+             */
             if ($clean_url == $clean_url_route) {
                 return $route;
             }
+
             $url_exploded = explode('/', $clean_url);
             $url_route_exploded = explode('/', $clean_url_route);
             if (count($url_exploded) !== count($url_route_exploded)) {
@@ -50,7 +53,9 @@ class Router
                 if (strpos($url_route_part, ':') !== false) {
                     /**
                      * It's a parameters so we continue to the next part
+                     * But before we save the position of parameters
                      */
+                    $route['params_position'][] = $i;
                     continue;
                 } else {
                     if ($url_part !== $url_route_part) {
