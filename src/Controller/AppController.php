@@ -10,12 +10,4 @@ class AppController extends Controller
     {
         parent::__contruct($request);
     }
-
-    /**
-     * @todo Hooks !
-     * Before filter after filter
-     * before rendering view after
-     * before rendering layout after
-     * => To declare in Controller.php
-     */
 }

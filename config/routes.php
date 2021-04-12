@@ -10,5 +10,5 @@ return [
      * Write your custom routes below 
      */
     '/article/:id' => ['controller' => 'Pages', 'action' => 'home'],
-    '/:id' => ['controller' => 'Pages', 'action' => 'home'],
+    '/contact' => ['controller' => 'Pages', 'action' => 'contact'],
 ];

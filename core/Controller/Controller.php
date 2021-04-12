@@ -85,4 +85,8 @@ class Controller
     {
         return $this->request;
     }
+
+    public function hook()
+    {
+    }
 }

@@ -17,7 +17,6 @@ class Request
         $this->method = $_SERVER['REQUEST_METHOD'];
 
         $router = new Router();
-
         $routes = $router->getRoutes();
         if ($router->match($url)) {
             // Personal Rooting : 
@@ -31,8 +30,9 @@ class Request
                     $this->parametters[] = $url_exploded[$param_position];
                 }
             }
-        } else {
             // Normal Routing
+        } else {
+
             $url_cleaned = trim($url, '/');
 
             $url_exploded = explode('/', $url_cleaned);
@@ -99,6 +99,11 @@ class Request
     public function is($method): bool
     {
         return (is_array($method)) ? (in_array($this->method, $method)) : ($this->method == $method);
+    }
+
+    public function getData(string $key = null)
+    {
+        return ($key) ? ((isset($_POST[$key])) ? $_POST[$key] : []) : $_POST;
     }
 
 
