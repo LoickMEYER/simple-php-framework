@@ -11,7 +11,7 @@ class VillesModel extends Model
     {
         return $this
             ->setQuery('select * from villes')
-            // ->bindParam(':id', 2)
+            ->bindParam(':id', 2)
             ->first();
     }
 }

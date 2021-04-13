@@ -14,6 +14,8 @@ class PagesController extends AppController
 
     public function home($id = null, $username = null)
     {
+        var_dump($_SERVER);
+        var_dump($_SERVER['DOCUMENT_ROOT']);
         var_dump($this->getRequest()->getData('tets'));
         var_dump($this->getRequest()->getAction());
         $username = 'Lemeyer';
@@ -23,6 +25,7 @@ class PagesController extends AppController
 
     public function contact()
     {
+        var_dump($_SERVER);
         $villes_model = new VillesModel();
         $villes = $villes_model->getVilles();
         var_dump($villes);
