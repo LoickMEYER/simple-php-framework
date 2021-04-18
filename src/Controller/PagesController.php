@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Model\VillesModel;
+use Core\Config\Config;
+use Core\Utils\Tools;
 
 class PagesController extends AppController
 {
@@ -12,25 +14,7 @@ class PagesController extends AppController
         parent::__contruct($request);
     }
 
-    public function home($id = null, $username = null)
+    public function home()
     {
-        var_dump($_SERVER);
-        var_dump($_SERVER['DOCUMENT_ROOT']);
-        var_dump($this->getRequest()->getData('tets'));
-        var_dump($this->getRequest()->getAction());
-        $username = 'Lemeyer';
-
-        $this->setVariable('username', $username);
-    }
-
-    public function contact()
-    {
-        var_dump($_SERVER);
-        $villes_model = new VillesModel();
-        $villes = $villes_model->getVilles();
-        var_dump($villes);
-        if ($this->getRequest()->is('POST')) {
-            $this->setVariable('name', $this->getRequest()->getData('name'));
-        }
     }
 }

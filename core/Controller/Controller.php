@@ -17,7 +17,7 @@ class Controller
      * @param Request $request The context request
      * @return void
      */
-    public function __contruct(Request $request): void
+    public function __contruct(Request $request)
     {
         $this->request = $request;
     }
@@ -39,7 +39,7 @@ class Controller
      * @param string $layout name of layout with or without extension
      * @return void
      */
-    public function setLayout(string $layout): void
+    public function setLayout(string $layout)
     {
         // We check if the user have passed the parameter with the ".php" extension or not.
         $extension = (strpos($layout, '.php')) ? '' : '.php';
@@ -57,9 +57,9 @@ class Controller
      * @param [type] $value Value of the variable
      * @return void
      */
-    public function setVariable(string $name = null, $value = null): void
+    public function setVariable(string $name = null, $value = null)
     {
-        if (!$name || !$value) {
+        if (!isset($name) || !isset($value)) {
             throw new Exception('Parameters Missing setVariable() require 2 parameters : $name & $value.');
         }
 

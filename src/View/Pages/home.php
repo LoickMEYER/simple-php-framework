@@ -10,7 +10,7 @@
             Made with <i class="fas fa-heart text-danger"></i> by <a href="https://loickmeyer.fr">Loïck MEYER</a>
         </p>
     </div>
-    <div class="row pl-5 pr-5">
+    <div class="row px-5">
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">

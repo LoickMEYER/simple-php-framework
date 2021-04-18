@@ -17,7 +17,7 @@ define('APP_DIR', 'src');
 
 
 /**
- * The Full Pass to the config Directory
+ * The path to the config Directory
  */
 define('CONFIG_DIR', ROOT . DS . 'config');
 
@@ -27,45 +27,50 @@ define('CONFIG_DIR', ROOT . DS . 'config');
  * To derive your webroot from your webserver change this to:
  *
  * `define('WWW_ROOT', rtrim($_SERVER['DOCUMENT_ROOT'], DS) . DS);`
+ * ../../../webroot/
  */
-define('WWW_ROOT',  'webroot' . DS);
+define('WWW_ROOT', ROOT . DS . 'webroot' . DS);
 
 /**
- * The Full Pass to the View Directory
+ * The full path to the View Directory
  */
 define('VIEW_DIR', ROOT . DS . APP_DIR . DS . 'View' . DS);
 
 
 /**
- * The Full Pass to the Layout Directory
+ * The full path to the Layout Directory
  */
 define('LAYOUT_DIR', VIEW_DIR . 'layout' . DS);
 
-
 /**
- * The Full Pass to the Webroot CSS Directory
+ * The path to the Webroot Directory
  */
-define('CSS_DIR', WWW_ROOT . 'css' . DS);
-
+define('WEBROOT', DS . explode('/', trim($_SERVER['SCRIPT_NAME'], '/'))[0] . DS . 'webroot' . DS);
 
 /**
- * The Full Pass to the Webroot JS Directory
+ * The path to the Webroot CSS Directory
  */
-define('JS_DIR', WWW_ROOT . 'js' . DS);
+define('CSS_DIR', WEBROOT . 'css' . DS);
 
 
 /**
- * The Full Pass to the Webroot IMG Directory
+ * The path to the Webroot JS Directory
  */
-define('IMG_DIR', WWW_ROOT . 'img' . DS);
+define('JS_DIR', WEBROOT . 'js' . DS);
 
 
 /**
- * The Full Pass to the Webroot FILES Directory
+ * The path to the Webroot IMG Directory
  */
-define('FILES_DIR', WWW_ROOT . 'files' . DS);
+define('IMG_DIR', WEBROOT . 'img' . DS);
 
 
 /**
- * Add personal path below
+ * The path to the Webroot FILES Directory
+ */
+define('FILES_DIR', WEBROOT . 'files' . DS);
+
+
+/**
+ * ⬇ Add personal path below ⬇
  */

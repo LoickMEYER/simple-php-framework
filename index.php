@@ -8,7 +8,20 @@ require 'vendor/autoload.php';
 
 require 'config/path.php';
 
+require 'core/include/functions.php';
+
 use Core\Request\Request;
+
+use Core\Config\Config;
+
+$config = new Config();
+
+if ($config->getConfig('debug')) {
+    /** Debug Mode */
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+}
 
 $request = new Request($_GET['url']);
 

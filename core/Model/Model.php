@@ -47,7 +47,7 @@ class Model
      *
      * @return void
      */
-    private function _reset(): void
+    private function _reset()
     {
         $this->query = '';
         $this->params = [];

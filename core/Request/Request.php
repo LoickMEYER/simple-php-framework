@@ -107,7 +107,7 @@ class Request
     }
 
 
-    public function render(): void
+    public function render()
     {
         $controller_name = $this->getController(true);
         $controller_name_with_namespace = "App\\Controller\\" . $controller_name . 'Controller';
