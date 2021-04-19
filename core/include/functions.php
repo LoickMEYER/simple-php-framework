@@ -41,3 +41,21 @@ function buildUrl(string $url = '/', bool $full_base = false): string
     }
     return $url;
 }
+
+/**
+ * Include element
+ *
+ * @param string $element_name The name of element (The extension ".php" is optionnal)
+ * @return void
+ */
+function loadElement(string $element_name)
+{
+    $element_name = trim($element_name, '/');
+    $element_name = str_replace('.php', '', $element_name);
+    $dir = VIEW_DIR . 'elements' . DS . $element_name . '.php';
+    if (file_exists($dir)) {
+        include($dir);
+    } else {
+        throw new Exception('The element in ' . $dir . ' was not found.');
+    }
+}
