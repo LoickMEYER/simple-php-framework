@@ -11,6 +11,7 @@ class Model
 
     private $pdo;
     private $query;
+    /** List of parameters */
     private $params = [];
 
     public function __construct()
